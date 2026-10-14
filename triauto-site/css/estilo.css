@@ -1,5 +1,6 @@
 /* =====================================================================
    TRIAUTO — ESTILO DO SITE
+   Site desenvolvido por Wiliam Oliveira
    As cores ficam todas aqui em cima. Para mudar uma cor no site
    inteiro, troque só o código dela nesta lista.
    ===================================================================== */
@@ -195,6 +196,8 @@ p { margin: 0; }
 
 /* ---------------- ANTES E DEPOIS ---------------- */
 .comparador-area { display: grid; grid-template-columns: 1fr 280px; gap: 28px; align-items: start; }
+/* com um trabalho só, o comparador ocupa a área toda (sem a coluna da lista) */
+.comparador-area--unico { grid-template-columns: 1fr; max-width: 980px; margin-inline: auto; }
 .comparador {
   position: relative; aspect-ratio: 16 / 10; border-radius: var(--raio); overflow: hidden;
   background: var(--carbono); user-select: none; touch-action: pan-y;
@@ -244,13 +247,15 @@ p { margin: 0; }
 .filtro.ativo { background: var(--gelo); color: var(--grafite); }
 
 .galeria {
-  display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 230px; gap: 12px;
+  display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 230px; grid-auto-flow: dense; gap: 12px;
 }
+.galeria.mudando { overflow: hidden; }
 .midia {
   position: relative; overflow: hidden; border-radius: var(--raio); cursor: zoom-in;
   background: var(--carbono); border: 0; padding: 0; color: inherit; text-align: left;
 }
-.midia:first-child { grid-column: span 2; grid-row: span 2; }
+.midia--grande { grid-column: span 2; grid-row: span 2; }
+.midia--larga { grid-column: span 2; }
 .midia img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
 .midia:hover img { transform: scale(1.04); }
 .midia figcaption {
@@ -265,6 +270,15 @@ p { margin: 0; }
 }
 .midia__play .i { width: 26px; height: 26px; margin-left: 3px; }
 .midia--video { cursor: pointer; }
+.midia__selo {
+  position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px 3px 8px; border-radius: 3px; background: rgba(15,16,19,.75);
+  font: 700 .95rem var(--fonte-titulo); letter-spacing: .04em; text-transform: uppercase;
+}
+.midia__selo .i { width: 14px; height: 14px; color: var(--vermelho); }
+.galeria__rodape { display: flex; justify-content: center; margin-top: 28px; }
+.galeria__rodape:has(> [hidden]:only-child) { display: none; }
+.galeria__ver-mais .i { transform: rotate(90deg); }
 .galeria__mais { margin-top: 28px; color: var(--prata); }
 
 /* ---------------- ETAPAS ---------------- */
@@ -319,6 +333,9 @@ p { margin: 0; }
 .rodape img { height: 52px; width: auto; margin-bottom: 8px; }
 .rodape p { color: var(--prata); }
 .rodape__pequeno { font-size: .9rem; color: #7c828d !important; }
+.rodape__credito { font-size: .9rem; color: #7c828d !important; display: flex; align-items: center; gap: 10px; }
+.rodape__credito::before { content: ""; width: 22px; height: 2px; background: var(--vermelho); transform: skewX(-25deg); }
+.rodape__credito strong { color: var(--gelo); font-family: var(--fonte-titulo); font-size: 1.05rem; font-weight: 600; letter-spacing: .02em; }
 
 /* ---------------- WHATSAPP FLUTUANTE ---------------- */
 .whats-flutuante {
@@ -344,6 +361,8 @@ p { margin: 0; }
 }
 .janela__fechar:hover, .janela__nav:hover { background: var(--vermelho); border-color: var(--vermelho); }
 .janela__fechar { top: 16px; right: 16px; }
+.janela__contador { position: absolute; top: 28px; left: 24px; font: 600 1.1rem var(--fonte-titulo); letter-spacing: .06em; color: var(--prata); }
+.janela__contador b { color: var(--gelo); }
 .janela__nav--ant { left: 14px; top: 50%; transform: translateY(-50%); }
 .janela__nav--prox { right: 14px; top: 50%; transform: translateY(-50%); }
 
@@ -359,7 +378,6 @@ p { margin: 0; }
   .etapas li::before { grid-row: span 2; font-size: 3.4rem; margin: 0; }
   .etapas li::after { display: none; }
   .galeria { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 190px; }
-  .midia:last-child:nth-child(even) { grid-column: span 2; }
   .contato { grid-template-columns: 1fr; }
 }
 
@@ -400,6 +418,18 @@ p { margin: 0; }
   .chamada .botao { margin-top: 14px; width: 100%; }
   .janela { padding: 60px 10px; }
   .janela__nav { top: auto; bottom: 14px; transform: none; }
+  .janela__contador { top: 30px; left: 16px; }
+  .midia__selo { top: 8px; left: 8px; font-size: .8rem; }
+  .midia:not(.midia--grande):not(.midia--larga) .midia__selo { display: none; }
+  .midia__play { width: 44px; height: 44px; }
+  .midia__play .i { width: 20px; height: 20px; }
+  .midia figcaption {
+    padding: 26px 10px 8px; font-size: .95rem; line-height: 1.15;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .midia--grande figcaption { padding: 34px 14px 12px; font-size: 1.1rem; }
+  .midia--grande .midia__play { width: 64px; height: 64px; }
+  .midia--grande .midia__play .i { width: 26px; height: 26px; }
   .whats-flutuante { right: 16px; bottom: 16px; width: 58px; height: 58px; }
 }
 

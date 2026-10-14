@@ -1,5 +1,6 @@
 /* =====================================================================
    TRIAUTO — ANIMAÇÕES (não precisa mexer)
+   Site desenvolvido por Wiliam Oliveira
    Abertura, entrada do topo, revelações ao rolar, profundidade (parallax),
    cabeçalho que se esconde, barra de progresso e demonstração do
    comparador antes/depois.

@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Site desenvolvido por Wiliam Oliveira -->
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -6,6 +7,7 @@
   <title>Triauto Soluções Automotivas | Lanternagem e Pintura em Divinópolis - MG</title>
   <meta name="description" content="Lanternagem, pintura automotiva, martelinho de ouro e polimento em Divinópolis - MG. Orçamento rápido pelo WhatsApp (37) 98838-9470.">
   <meta name="theme-color" content="#16181c">
+  <meta name="author" content="Wiliam Oliveira">
 
   <!-- Prévia ao compartilhar o link no WhatsApp / Instagram.
        DEPOIS DE PUBLICAR: troque "assets/img/compartilhar.jpg" na linha og:image
@@ -182,6 +184,12 @@
           </div>
         </header>
         <div class="galeria" id="listaGaleria"></div>
+        <div class="galeria__rodape">
+          <button type="button" class="botao botao--vazado galeria__ver-mais" id="galeriaMais" hidden>
+            <span>Ver mais</span>
+            <svg class="i" aria-hidden="true"><use href="#i-seta-dir"/></svg>
+          </button>
+        </div>
         <p class="galeria__mais">
           Mais trabalhos no Instagram
           <a data-insta href="https://www.instagram.com/triauto_s_automotivas/" target="_blank" rel="noopener">@triauto_s_automotivas</a>
@@ -292,6 +300,7 @@
       <img src="assets/img/logo-branca.png" alt="Triauto Soluções Automotivas" width="1026" height="429" loading="lazy">
       <p>Lanternagem, pintura e estética automotiva em Divinópolis - MG.</p>
       <p class="rodape__pequeno">© <span id="ano">2026</span> Triauto Soluções Automotivas. Todos os direitos reservados.</p>
+      <p class="rodape__credito">Site desenvolvido por <strong>Wiliam Oliveira</strong></p>
     </div>
   </footer>
 
@@ -302,6 +311,7 @@
 
   <!-- Janela de ampliar foto / tocar vídeo -->
   <div class="janela" id="janela" role="dialog" aria-modal="true" aria-label="Visualizar mídia" hidden>
+    <span class="janela__contador" id="janelaContador" aria-live="polite"></span>
     <button class="janela__fechar" id="janelaFechar" aria-label="Fechar">
       <svg class="i" aria-hidden="true"><use href="#i-x"/></svg>
     </button>

@@ -1,5 +1,6 @@
 /* =====================================================================
    TRIAUTO — ARQUIVO DE CONTEÚDO DO SITE
+   Site desenvolvido por Wiliam Oliveira
    ---------------------------------------------------------------------
    Este é o ÚNICO arquivo que você precisa mexer no dia a dia.
    Aqui ficam: telefone, endereço, serviços, fotos, vídeos e antes/depois.
@@ -80,14 +81,9 @@ window.TRIAUTO = {
   */
   antesDepois: [
     {
-      titulo: "Porta dianteira amassada",
-      antes: "assets/fotos/antes-01.jpg",
-      depois: "assets/fotos/depois-01.jpg"
-    },
-    {
-      titulo: "Para-lama com risco profundo",
-      antes: "assets/fotos/antes-02.jpg",
-      depois: "assets/fotos/depois-02.jpg"
+      titulo: "Tampa traseira da Fiat Strada",
+      antes: "assets/fotos/antes-strada.jpg",
+      depois: "assets/fotos/depois-strada.jpg"
     }
   ],
 
@@ -97,12 +93,18 @@ window.TRIAUTO = {
                      capa = imagem que aparece antes do play (pode ser uma foto)
   */
   galeria: [
-    { tipo: "foto",  arquivo: "assets/fotos/foto-01.jpg", legenda: "Pintura completa" },
-    { tipo: "foto",  arquivo: "assets/fotos/foto-02.jpg", legenda: "Recuperação de lateral" },
-    { tipo: "video", arquivo: "assets/videos/video-01.mp4", capa: "assets/fotos/capa-video-01.jpg", legenda: "Polimento em andamento" },
-    { tipo: "foto",  arquivo: "assets/fotos/foto-03.jpg", legenda: "Acabamento em verniz" },
-    { tipo: "foto",  arquivo: "assets/fotos/foto-04.jpg", legenda: "Para-choque recuperado" },
-    { tipo: "foto",  arquivo: "assets/fotos/foto-05.jpg", legenda: "Entrega ao cliente" }
+    { tipo: "video", arquivo: "assets/videos/byd-finalizado.mp4", capa: "assets/fotos/capa-byd-finalizado.jpg", legenda: "BYD finalizado" },
+    { tipo: "foto",  arquivo: "assets/fotos/strada-traseira-finalizada.jpg", legenda: "Fiat Strada finalizada" },
+    { tipo: "foto",  arquivo: "assets/fotos/lateral-reparo-massa.jpg", legenda: "Reparo de lataria na lateral" },
+    { tipo: "video", arquivo: "assets/videos/byd-pintura-processo.mp4", capa: "assets/fotos/capa-byd-pintura-processo.jpg", legenda: "Pintura do BYD, do primer ao acabamento" },
+    { tipo: "foto",  arquivo: "assets/fotos/fiat-frente-preparacao.jpg", legenda: "Frente preparada para pintura" },
+    { tipo: "foto",  arquivo: "assets/fotos/corolla-frente-finalizado.jpg", legenda: "Toyota Corolla" },
+    { tipo: "video", arquivo: "assets/videos/pintura-brilho.mp4", capa: "assets/fotos/capa-pintura-brilho.jpg", legenda: "Pintura com brilho de fábrica" },
+    { tipo: "foto",  arquivo: "assets/fotos/onix-preparacao-pintura.jpg", legenda: "Preparação para pintura" },
+    { tipo: "foto",  arquivo: "assets/fotos/yaris-traseira-finalizada.jpg", legenda: "Toyota Yaris" },
+    { tipo: "video", arquivo: "assets/videos/corolla-finalizado.mp4", capa: "assets/fotos/capa-corolla-finalizado.jpg", legenda: "Corolla pronto para entrega" },
+    { tipo: "foto",  arquivo: "assets/fotos/hatch-finalizado.jpg", legenda: "Volkswagen Polo" },
+    { tipo: "video", arquivo: "assets/videos/byd-parachoque-pintura.mp4", capa: "assets/fotos/capa-byd-parachoque-pintura.jpg", legenda: "Para-choque dianteiro em pintura" }
   ],
 
   /* ---------------- VÍDEO DO TOPO (opcional) ----------------
